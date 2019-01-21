@@ -1,0 +1,40 @@
+services:
+    _defaults:
+        autowire: true
+        public: false
+
+    Bn01z\AsyncTask\Command\RunCommand:
+        tags:
+            - { name: 'console.command' }
+
+    Bn01z\AsyncTask\Controller\StatusController:
+        tags:
+            - { name: 'controller.service_arguments' }
+
+    Bn01z\AsyncTask\EventListener\AsyncTaskListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller }
+
+    Bn01z\AsyncTask\Status\WebSocketNotificator:
+        class: Bn01z\AsyncTask\Status\ZMQWebSocketNotificator
+
+    Bn01z\AsyncTask\Status\WebSocketServer: ~
+
+    Bn01z\AsyncTask\Task\TaskFactory:
+        class: Bn01z\AsyncTask\Task\DefaultTaskFactory
+        arguments: [ "@controller_resolver", "@argument_resolver", '@Bn01z\AsyncTask\Status\RequestStatusAttributeManager' ]
+
+    Bn01z\AsyncTask\Process\ProcessManager:
+        class: Bn01z\AsyncTask\Process\PcntlProcessManager
+
+    Bn01z\AsyncTask\Process\TaskProcessor:
+        class: Bn01z\AsyncTask\Process\DefaultTaskProcessor
+
+    Bn01z\AsyncTask\Queue\TaskQueue: ~
+
+    Bn01z\AsyncTask\Status\TaskStatusManager: ~
+
+    Bn01z\AsyncTask\Status\RequestStatusAttributeManager: ~
+
+    Bn01z\AsyncTask\Status\StatusIdGenerator:
+        class: Bn01z\AsyncTask\Status\Uuid4StatusIdGenerator

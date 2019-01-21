@@ -1,0 +1,7 @@
+bn01z_async_status_check:
+  path: "/check/{id}"
+  controller: "Bn01z\\AsyncTask\\Controller\\StatusController::check"
+
+bn01z_async_status_result:
+  path: "/result/{id}"
+  controller: "Bn01z\\AsyncTask\\Controller\\StatusController::result"
