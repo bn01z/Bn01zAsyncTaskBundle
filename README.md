@@ -1,53 +1,21 @@
-Installation
-============
+Bn01zAsyncTaskBundle
+====================
 
-Applications that use Symfony Flex
-----------------------------------
+[![Build Status](https://secure.travis-ci.org/bn01z/Bn01zAsyncTaskBundle.png)](http://travis-ci.org/bn01z/Bn01zAsyncTaskBundle)
 
-Open a command console, enter your project directory and execute:
+This bundle provides an easy way of converting controller actions into asynchronous tasks run in background,
+with status updates via web socket or HTTP request.
 
-```console
-$ composer require bn01z/async-task-bundle
-```
+## Documentation
 
-Applications that don't use Symfony Flex
-----------------------------------------
+The bulk of the documentation is stored in the `Resources/doc/index.md` file in this bundle:
 
-### Step 1: Download the Bundle
+[Read the Documentation for master](https://github.com/bn01z/Bn01zAsyncTaskBundle/blob/master/Resources/doc/index.md)
 
-Open a command console, enter your project directory and execute the
-following command to download the latest stable version of this bundle:
 
-```console
-$ composer require bn01z/async-task-bundle
-```
+## License
 
-This command requires you to have Composer installed globally, as explained
-in the [installation chapter](https://getcomposer.org/doc/00-intro.md)
-of the Composer documentation.
+This bundle is under the MIT license. See the complete license in the bundle:
 
-### Step 2: Enable the Bundle
+[Read the License](https://github.com/bn01z/Bn01zAsyncTaskBundle/blob/master/LICENSE)
 
-Then, enable the bundle by adding it to the list of registered bundles
-in the `app/AppKernel.php` file of your project:
-
-```php
-<?php
-// app/AppKernel.php
-
-// ...
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
-        $bundles = [
-            // ...
-            new Bn01z\AsyncTask\Bn01zAsyncTaskBundle(),
-        ];
-
-        // ...
-    }
-
-    // ...
-}
-```
