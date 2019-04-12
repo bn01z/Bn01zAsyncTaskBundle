@@ -10,12 +10,12 @@ with status updates via web socket or HTTP request.
 
 The bulk of the documentation is stored in the `Resources/doc/index.md` file in this bundle:
 
-[Read the Documentation for master](https://github.com/bn01z/Bn01zAsyncTaskBundle/blob/master/Resources/doc/index.md)
+[Read the Documentation](Resources/doc/index.md)
 
 
 ## License
 
 This bundle is under the MIT license. See the complete license in the bundle:
 
-[Read the License](https://github.com/bn01z/Bn01zAsyncTaskBundle/blob/master/LICENSE)
+[Read the License](LICENSE)
 

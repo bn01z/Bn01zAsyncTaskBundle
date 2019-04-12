@@ -74,7 +74,7 @@ final class WebSocketServer implements WampServerInterface
 
     public function onOpen(ConnectionInterface $conn)
     {
-        $conn->send('Connected!');
+        $conn->send(json_encode('Connected!'));
     }
 
     public function onClose(ConnectionInterface $conn)
@@ -86,7 +86,7 @@ final class WebSocketServer implements WampServerInterface
 
     public function onError(ConnectionInterface $conn, \Exception $e)
     {
-        $conn->send(sprintf('Error: %s', $e->getMessage()));
+        $conn->send(json_encode(sprintf('Error: %s', $e->getMessage())));
     }
 
     public function onCall(ConnectionInterface $conn, $id, $topic, array $params)
